@@ -149,7 +149,7 @@ public:
 	AverageStudent() : Student() {}
 	AverageStudent(const string& name) : Student(name) {}
 	virtual Answer solveEq(QuadEq eq, NumOfRoots& n)override {
-		if (rand() % 2) {
+		if (rand() / (double)RAND_MAX < 0.55) {
 			return eq.solve(n);
 		}
 		else {
@@ -160,9 +160,17 @@ public:
 		}
 	}
 };
-
-const int count_of_eqs = 10;
+const int count_of_eqs = 100;
 const int count_of_students = 10;
+void generateEqs(const string filename) {
+	ofstream file(filename);
+	for (int i = 0; i < count_of_eqs; ++i)
+	{
+		file << rand() % 100 + 1 << " " << rand() % 100 + 1 << " " << rand() % 100 + 1 << std::endl;
+	}
+	file.close();
+}
+
 
 
 
@@ -204,6 +212,7 @@ void studentsSolveEqs(const char* filename, vector < unique_ptr < Student>>& stu
 
 int main(void) {
 	srand(time(0));
+	generateEqs("Eqs.txt");
 	vector<unique_ptr<Student>> students = generateStudents();
 
 	Teacher tchr;
