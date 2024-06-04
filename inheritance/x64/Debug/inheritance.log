@@ -1,0 +1,3 @@
+﻿  MathExamModeling.cpp
+C:\Users\Kampot\OneDrive\Рабочий стол\ЛАБА 2\MathExamModeling.cpp(214,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  inheritance.vcxproj -> C:\Users\Kampot\OneDrive\Рабочий стол\ЛАБА 2\x64\Debug\inheritance.exe
