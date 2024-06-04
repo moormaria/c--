@@ -4,6 +4,13 @@
 #define GAME_CODE
 
 #include <SFML/Graphics.hpp>
+#include<vector>
+#include<iostream>
+#include<string>
+#include<fstream>
+#include<locale>
+#include<sstream>
+#include<iterator>
 
 namespace Game {
 	//Drawing Shapes
